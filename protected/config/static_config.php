@@ -22,7 +22,7 @@ return array(
     // application components
     'components'=>array(
         'db'=>array(
-            'connectionString' => 'mysql:host=localhost;dbname=ztrack',
+            'connectionString' => 'mysql:host=localhost;dbname=zdoctor',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
