@@ -1,0 +1,26 @@
+2014/08/30 09:09:33 [error] [exception.CException] exception 'CException' with message 'Alias "gii.generators.model.*" is invalid. Make sure it points to an existing directory or file.' in E:\Denwer\home\ztrack.dev\framework\YiiBase.php:347
+Stack trace:
+#0 E:\Denwer\home\ztrack.dev\protected\commands\ArCommand.php(12): YiiBase::import('gii.generators....', true)
+#1 E:\Denwer\home\ztrack.dev\framework\console\CConsoleCommandRunner.php(71): ArCommand->run(Array)
+#2 E:\Denwer\home\ztrack.dev\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#3 E:\Denwer\home\ztrack.dev\framework\base\CApplication.php(180): CConsoleApplication->processRequest()
+#4 E:\Denwer\home\ztrack.dev\framework\yiic.php(33): CApplication->run()
+#5 E:\Denwer\home\ztrack.dev\protected\yiic.php(7): require_once('E:\Denwer\home\...')
+#6 E:\Denwer\home\ztrack.dev\protected\yiic(4): require_once('E:\Denwer\home\...')
+#7 {main}
+---
+2014/08/30 09:09:57 [error] [system.db.CDbCommand] Error in preparing SQL: show tables
+2014/08/30 09:09:57 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "show": syntax error. The SQL statement executed was: show tables.
+2014/08/30 09:09:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "show": syntax error. The SQL statement executed was: show tables' in E:\Denwer\home\ztrack.dev\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\Denwer\home\ztrack.dev\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\Denwer\home\ztrack.dev\protected\commands\ArCommand.php(22): CDbCommand->queryAll()
+#2 E:\Denwer\home\ztrack.dev\protected\commands\ArCommand.php(13): ArCommand->_getTables()
+#3 E:\Denwer\home\ztrack.dev\framework\console\CConsoleCommandRunner.php(71): ArCommand->run(Array)
+#4 E:\Denwer\home\ztrack.dev\framework\console\CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#5 E:\Denwer\home\ztrack.dev\framework\base\CApplication.php(180): CConsoleApplication->processRequest()
+#6 E:\Denwer\home\ztrack.dev\framework\yiic.php(33): CApplication->run()
+#7 E:\Denwer\home\ztrack.dev\protected\yiic.php(7): require_once('E:\Denwer\home\...')
+#8 E:\Denwer\home\ztrack.dev\protected\yiic(4): require_once('E:\Denwer\home\...')
+#9 {main}
+---
