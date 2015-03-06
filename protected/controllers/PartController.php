@@ -76,16 +76,7 @@ class PartController extends Controller {
         $model=$this->loadModel($id);
         $path = Yii::getPathOfAlias('application').'/../public/images/parts/'.$model->image;
         $gd = imagecreatefrompng($path);
-        $color = imagecolorallocate($gd, 255, 0, 0);
         imagesetthickness($gd, 3);
-        foreach ($model->childGlue as $glue) {
-            imageline($gd, $glue->first_x, $glue->first_y, $glue->second_x, $glue->second_y, $color);
-        }
-        $color = imagecolorallocate($gd, 0, 0, 255);
-        if ($model->parentGlue) {
-            $glue = $model->parentGlue;
-            imageline($gd, $glue->first_x, $glue->first_y, $glue->second_x, $glue->second_y, $color);
-        }
         header('Content-type: image/png');
         imagepng($gd, NULL, 0,  NULL);
     }

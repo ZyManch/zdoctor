@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var $this Controller
+ */
 $this->breadcrumbs=array(
 	'Parts'=>array('index'),
 	$model->title,
@@ -30,6 +33,10 @@ $this->menu=array(
                 'changed',
             ),
         )); ?>
+        <h3>Принадлежность</h3>
+        <ul>
+            <?php $this->renderPartial('_tree',array('part' => $model->getMainPart(),'main_part'=>$model));?>
+        </ul>
     </div>
     <div class="block non-border-right span6 text-center">
         <img src="/part/image/<?php echo $model->id;?>" width="<?php echo $model->width;?>px" height="<?php echo $model->height;?>px">

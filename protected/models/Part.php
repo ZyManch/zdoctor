@@ -2,8 +2,8 @@
 
 /**
  * Class Part
- * @property PartGlue $parentGlue
- * @property PartGlue[] $childGlue
+ * @property PartLink[] $childPartLinks
+ * @property PartLink $parentPartLink
  */
 class Part extends CPart {
 
@@ -12,9 +12,20 @@ class Part extends CPart {
 
     protected function _extendedRelations() {
         return array(
-            'childGlue' => array(self::HAS_MANY, 'PartGlue', 'part_id','on' => 'childGlue.type="to_child"'),
-            'parentGlue' => array(self::HAS_ONE, 'PartGlue', 'part_id','on' => 'parentGlue.type="to_parent"'),
+            'parentPartLink' => array(self::HAS_ONE, 'PartLink', 'child_part_id'),
+            'childPartLinks' => array(self::HAS_MANY, 'PartLink', 'parent_part_id'),
         );
+    }
+
+    /**
+     * @return Part
+     */
+    public function getMainPart() {
+        $parent = $this;
+        while ($parent->parentPartLink) {
+            $parent = $parent->parentPartLink->parentPart;
+        }
+        return $parent;
     }
 
     public function asArray($angle = 0, $zoom = 1) {
